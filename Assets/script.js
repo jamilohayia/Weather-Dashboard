@@ -41,6 +41,7 @@ function setTodaysInfo(city) {
 }
 
 
+// Function for the five day forecast
 
 function FiveDayForecast(city){
     $("#forecastTitle").text("5-Day Forecast:");
