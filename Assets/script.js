@@ -5,6 +5,8 @@ var currentWeatherUrl = "https://api.openweathermap.org/data/2.5/weather?APPID="
 var fiveDayForecastUrl = "https://api.openweathermap.org/data/2.5/forecast?APPID="+apiKey;
 
 
+// added the search bar functionality
+
 $("#search-button").click(function(){
     var city = $("#search-value").val();
     localStorage.setItem("lastCity", city);
@@ -12,11 +14,6 @@ $("#search-button").click(function(){
     displayCityInfo(city);
 });
 
-$(document).on("click", ".list-group-item", function(){
-    var city = $(this).text();
-    localStorage.setItem("lastCity", city);
-    displayCityInfo(city);
-});
 
 function displayCityInfo(city){
     setTodaysInfo(city);
@@ -79,6 +76,16 @@ function addForecastCard(dayWeather, cardNum){
 function kelvinToFarenheit(kelvin){
     return (((parseFloat(kelvin) - 273.15) * (9/5)) + 32).toFixed(2);
 }
+
+
+
+// setting local storage to store the last city that was searched. 
+
+$(document).on("click", ".list-group-item", function(){
+    var city = $(this).text();
+    localStorage.setItem("lastCity", city);
+    displayCityInfo(city);
+});
 
 // retrieve the last searched city 
 
