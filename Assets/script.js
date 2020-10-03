@@ -57,6 +57,7 @@ function FiveDayForecast(city){
     });
 }
 
+// function to add the forecast card 
 
 function addForecastCard(dayWeather, cardNum){
     var header = dayWeather.dt_txt.slice(0, 10);
