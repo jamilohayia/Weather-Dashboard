@@ -15,6 +15,8 @@ $("#search-button").click(function(){
 });
 
 
+// Function to display the city's information
+
 function displayCityInfo(city){
     setTodaysInfo(city);
     FiveDayForecast(city);
@@ -76,7 +78,6 @@ function addForecastCard(dayWeather, cardNum){
 function kelvinToFarenheit(kelvin){
     return (((parseFloat(kelvin) - 273.15) * (9/5)) + 32).toFixed(2);
 }
-
 
 
 // setting local storage to store the last city that was searched. 
